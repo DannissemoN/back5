@@ -77,7 +77,7 @@ if (!empty($messages) && empty($mes)) {
     </div>
 </body>
 <?php
-}
+
 // Иначе, если запрос был методом POST, т.е. нужно сделать авторизацию с записью логина в сессию.
 else {
   setlocale(LC_ALL, "ru_RU.UTF-8");
