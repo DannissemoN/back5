@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $errors['biography'] = !empty($_COOKIE['biography_error']);
  
 
-  .
+  
   if ($errors['fio']) {
     setcookie('fio_error', '', 100000);
     $messages[] = '<div class="error">Заполните имя корректно.</div>';
