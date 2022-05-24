@@ -94,22 +94,22 @@ else {
   $l=$_POST['login'];
   $p=md5($_POST['pass']);
 
-  $user = 'u24224';
-  $pass = '1546096';
-  $db = new PDO('mysql:host=localhost;dbname=u24224', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
+  $user = 'u47606';
+  $pass = '8549349';
+  $db = new PDO('mysql:host=localhost;dbname=u47606', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
 
   $sel = $db->query("SELECT login FROM baza WHERE login = $l");
     foreach($sel as $el)
       $login=$el['login'];
-  $sel = $db->query("SELECT pass FROM baza WHERE login = $l");
+  $sel = $db->query("SELECT password FROM baza WHERE login = $l");
     foreach($sel as $el)
-      $pas=$el['pass'];
+      $pas=$el['password'];
 
   // Если все ок, то авторизуем пользователя.
   if (!empty($login) && !empty($pas) && $p==$pas){
   $_SESSION['login'] = $_POST['login'];
   $p2=$db->quote($p);
-  $sel = $db->query("SELECT id FROM baza WHERE login=$l AND pass=$p2");
+  $sel = $db->query("SELECT id FROM baza WHERE login=$l AND password=$p2");
   foreach($sel as $el)
     $id = (int)$el['id'];
   // Записываем ID пользователя.
