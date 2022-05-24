@@ -98,18 +98,16 @@ else {
   $pass = '8549349';
   $db = new PDO('mysql:host=localhost;dbname=u47606', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
 
-  $sel = $db->query("SELECT login FROM baza WHERE login = $l");
-    foreach($sel as $el)
-      $login=$el['login'];
   $sel = $db->query("SELECT password FROM baza WHERE login = $l");
     foreach($sel as $el)
       $pas=$el['password'];
-
+  print_r($el);
   // Если все ок, то авторизуем пользователя.
-  if (!empty($login) && !empty($pas) && $p==$pas){
+  if (!empty($l) && !empty($pas) && $p==$pas){
   $_SESSION['login'] = $_POST['login'];
+  $l2=$db->quote($l);
   $p2=$db->quote($p);
-  $sel = $db->query("SELECT id FROM baza WHERE login=$l AND password=$p2");
+  $sel = $db->query("SELECT id FROM baza WHERE login=$l2 AND password=$p2");
   foreach($sel as $el)
     $id = (int)$el['id'];
   // Записываем ID пользователя.
