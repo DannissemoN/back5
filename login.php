@@ -105,8 +105,9 @@ else {
   if (!empty($l) && !empty($pas) && $p==$pas){
   $_SESSION['login'] = $_POST['login'];
   $sel = $db->query("SELECT id FROM baza WHERE login=$l");
-    print_r($sel);
-  $id = $sel[0]['id'];
+  foreach($sel as $el){
+  $id = $el['id'];}
+    print $id;
     exit();
   // Записываем ID пользователя.
   $_SESSION['uid'] = $id;
