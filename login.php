@@ -104,8 +104,10 @@ else {
   // Если все ок, то авторизуем пользователя.
   if (!empty($l) && !empty($pas) && $p==$pas){
   $_SESSION['login'] = $_POST['login'];
-  $sel = $db->query("SELECT id FROM baza WHERE login=$l AND password=$p");
+  $sel = $db->query("SELECT id FROM baza WHERE login=$l");
+    print_r($sel);
   $id = $sel[0]['id'];
+    exit();
   // Записываем ID пользователя.
   $_SESSION['uid'] = $id;
   } 
