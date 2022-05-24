@@ -101,15 +101,10 @@ else {
   $sel = $db->query("SELECT password FROM baza WHERE login = $l");
     foreach($sel as $el)
       $pas=$el['password'];
-  print_r($el);
   // Если все ок, то авторизуем пользователя.
   if (!empty($l) && !empty($pas) && $p==$pas){
   $_SESSION['login'] = $_POST['login'];
-  $l2=$db->quote($l);
-  $p2=$db->quote($p);
-  $sel = $db->query("SELECT id FROM baza WHERE login=$l2 AND password=$p2");
-  print_r($sel);
-    exit();
+  $sel = $db->query("SELECT id FROM baza WHERE login=$l AND password=$p");
   foreach($sel as $el)
     $id = (int)$el['id'];
   // Записываем ID пользователя.
