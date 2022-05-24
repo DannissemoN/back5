@@ -107,8 +107,6 @@ else {
   $sel = $db->query("SELECT id FROM baza WHERE login=$l");
   foreach($sel as $el){
   $id = $el['id'];}
-    print $id;
-    exit();
   // Записываем ID пользователя.
   $_SESSION['uid'] = $id;
   } 
