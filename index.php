@@ -87,6 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $pass = '8549349';
   $db = new PDO('mysql:host=localhost;dbname=u47606', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
   $uid = $_SESSION['uid'];
+   print_r($_SESSION);
   $res= $db->query("SELECT fio, email, year, pol, limb, biography FROM application2 WHERE id = $uid");
   foreach($res as $el){
     $values['fio']=strip_tags($el['fio']);
