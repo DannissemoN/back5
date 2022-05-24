@@ -197,9 +197,9 @@ else {
     
   }
 
-  $user = 'u24224';
-  $pass = '1546096';
-  $db = new PDO('mysql:host=localhost;dbname=u24224', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
+  $user = 'u47606';
+  $pass = '8549349';
+  $db = new PDO('mysql:host=localhost;dbname=u47606', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
     if (!empty($_COOKIE[session_name()]) &&
   session_start() && !empty($_SESSION['login'])) {
 try {
