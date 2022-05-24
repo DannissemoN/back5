@@ -233,7 +233,7 @@ try {
   $stmt -> execute([$_POST['fio'],$_POST['email'],$_POST['year'],$_POST['gender'],$_POST['limbs'],$_POST['biography']]);
 
   $id = $db->lastInsertId();
-  $stmt = $db->prepare("INSERT INTO baza SET id = ?, login = ?, pass = ?");
+  $stmt = $db->prepare("INSERT INTO baza SET id = ?, login = ?, password = ?");
   $stmt -> execute([$id,$login,md5($pass)]);
 
   $stmt = $db->prepare("INSERT INTO spw SET id = ?, nom_spw = ?");
