@@ -108,6 +108,8 @@ else {
   $l2=$db->quote($l);
   $p2=$db->quote($p);
   $sel = $db->query("SELECT id FROM baza WHERE login=$l2 AND password=$p2");
+  print_r($sel);
+    exit();
   foreach($sel as $el)
     $id = (int)$el['id'];
   // Записываем ID пользователя.
